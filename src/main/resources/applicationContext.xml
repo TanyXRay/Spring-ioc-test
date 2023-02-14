@@ -8,6 +8,7 @@
     <bean id="musicClassicBean" class="ru.home.chernyadieva.music.ClassicMusic">
     </bean>
 
-    <bean id="musicRockBean" class="ru.home.chernyadieva.music.RockMusic">
+    <bean id="musicPlayer" class="ru.home.chernyadieva.music.player.MusicPlayer">
+        <constructor-arg ref="musicClassicBean"/>
     </bean>
 </beans>
