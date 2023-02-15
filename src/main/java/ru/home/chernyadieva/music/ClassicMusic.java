@@ -5,6 +5,6 @@ import ru.home.chernyadieva.music.interface_music.Music;
 public class ClassicMusic implements Music {
     @Override
     public String getSong() {
-        return "Claire the moon";
+        return "Classic: Claire the moon";
     }
 }

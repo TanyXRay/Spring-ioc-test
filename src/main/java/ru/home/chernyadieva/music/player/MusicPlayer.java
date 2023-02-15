@@ -2,15 +2,17 @@ package ru.home.chernyadieva.music.player;
 
 import ru.home.chernyadieva.music.interface_music.Music;
 
-public class MusicPlayer {
-    private Music music;
+import java.util.ArrayList;
+import java.util.List;
 
-    //IoC
-    public MusicPlayer(Music music) {
-        this.music = music;
+public class MusicPlayer {
+    private List<Music> musicList = new ArrayList<>();
+
+    public void setMusicList(List<Music> musicList) {
+        this.musicList = musicList;
     }
 
-    public String playMusic(){
-       return "Playing: " + music.getSong();
+    public void playMusic() {
+        musicList.forEach(music -> System.out.println(music.getSong()));
     }
 }
