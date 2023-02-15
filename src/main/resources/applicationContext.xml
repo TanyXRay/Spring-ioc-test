@@ -1,13 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="
-    http://www.springframework.org/schema/beans
-    http://www.springframework.org/schema/beans/spring-beans.xsd">
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/context
+                           http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <bean id="musicClassicBean" class="ru.home.chernyadieva.music.ClassicMusic">
-    </bean>
+    <context:property-placeholder location="classpath:musicPlayer.properties"/>
 
     <bean id="musicRockBean" class="ru.home.chernyadieva.music.RockMusic">
+    </bean>
+
+    <bean id="musicPlayer" class="ru.home.chernyadieva.music.player.MusicPlayer">
+        <property name="music" ref="musicRockBean"/>
+
+        <property name="author" value="${musicPlayer.author}"/>
+        <property name="rating" value="${musicPlayer.rating}"/>
     </bean>
 </beans>
