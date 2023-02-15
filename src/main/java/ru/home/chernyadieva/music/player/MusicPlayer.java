@@ -5,8 +5,11 @@ import ru.home.chernyadieva.music.interface_music.Music;
 public class MusicPlayer {
     private Music music;
 
-    //IoC
-    public MusicPlayer(Music music) {
+    /**
+     * Внедрение зависимости с помощью setter-a
+     * @param music
+     */
+    public void setMusic(Music music) {
         this.music = music;
     }
 
