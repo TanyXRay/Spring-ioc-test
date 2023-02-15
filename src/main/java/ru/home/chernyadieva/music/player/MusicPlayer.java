@@ -4,13 +4,32 @@ import ru.home.chernyadieva.music.interface_music.Music;
 
 public class MusicPlayer {
     private Music music;
+    private String author;
+    private int rating;
 
-    //IoC
-    public MusicPlayer(Music music) {
+    public void setMusic(Music music) {
         this.music = music;
     }
 
-    public String playMusic(){
-       return "Playing: " + music.getSong();
+    public String getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
+    public int getRating() {
+        return rating;
+    }
+
+    public void setRating(int rating) {
+        this.rating = rating;
+    }
+
+    public String playMusic() {
+        return "Playing: " + music.getSong() +
+                "\nAuthor: " + getAuthor() +
+                "\nRating: " + getRating();
     }
 }

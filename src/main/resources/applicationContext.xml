@@ -5,9 +5,13 @@
     http://www.springframework.org/schema/beans
     http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="musicClassicBean" class="ru.home.chernyadieva.music.ClassicMusic">
+    <bean id="musicRockBean" class="ru.home.chernyadieva.music.RockMusic">
     </bean>
 
-    <bean id="musicRockBean" class="ru.home.chernyadieva.music.RockMusic">
+    <bean id="musicPlayer" class="ru.home.chernyadieva.music.player.MusicPlayer">
+        <property name="music" ref="musicRockBean"/>
+
+        <property name="author" value="Green Day"/>
+        <property name="rating" value="8"/>
     </bean>
 </beans>
