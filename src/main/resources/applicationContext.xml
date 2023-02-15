@@ -8,6 +8,13 @@
     <bean id="musicClassicBean" class="ru.home.chernyadieva.music.ClassicMusic">
     </bean>
 
-    <bean id="musicRockBean" class="ru.home.chernyadieva.music.RockMusic">
+    <bean id="musicPlayer"
+          class="ru.home.chernyadieva.music.player.MusicPlayer"
+          scope="singleton"
+          factory-method="getMusicPlayer"
+          init-method="initBeforeBeanCreation"
+          destroy-method="destroyBeforeClosingApp">
+
+        <property name="music" ref="musicClassicBean"/>
     </bean>
 </beans>
